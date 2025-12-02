@@ -1,7 +1,6 @@
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
 vim.opt.wrap = false
 vim.opt.signcolumn = "yes"
 
