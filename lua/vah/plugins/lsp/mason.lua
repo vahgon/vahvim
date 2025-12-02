@@ -18,5 +18,5 @@ return {
             },
         },
         'neovim/nvim-lspconfig'
-    }
+    },
 }
