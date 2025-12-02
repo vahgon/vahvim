@@ -19,8 +19,8 @@ return {
                         ['G'] = actions.move_to_bottom,
                         ["<C-u>"] = actions.preview_scrolling_up,
                         ["<C-d>"] = actions.preview_scrolling_down,
-                        ["<C-f>"] = actions.preview_scrolling_left,
-                        ["<C-k>"] = actions.preview_scrolling_right,
+                        ["<C-h>"] = actions.preview_scrolling_left,
+                        ["<C-l>"] = actions.preview_scrolling_right,
 
                         ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
                         ['<C-/>'] = actions.which_key,
