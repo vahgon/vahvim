@@ -17,8 +17,8 @@ return {
         }
         dashboard.section.buttons.val = {
             dashboard.button('e', '󰄛  New File', '<cmd>ene <CR>'),
-            dashboard.button('<leader>tf', '  Find file', '<cmd>Telescope find_files <CR>'),
-            dashboard.button('<leader>tg', '  Find word(s)', '<cmd>Telescope live_grep <CR>'),
+            dashboard.button('<leader>ff', '  Find file', '<cmd>Telescope find_files <CR>'),
+            dashboard.button('<leader>fg', '  Find word(s)', '<cmd>Telescope live_grep <CR>'),
             dashboard.button('<leader>sr', '  Restore previous session', '<cmd>SessionRestore <CR>'),
             dashboard.button('q', '  Quit', '<cmd>q <CR>'),
         }
