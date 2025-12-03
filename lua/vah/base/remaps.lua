@@ -13,12 +13,19 @@ vim.keymap.set('n', '<leader>q', '<cmd>wq<CR>', { silent = true, noremap = true,
 vim.keymap.set('n', '<leader>x', '<cmd>q!<CR>', { silent = true, noremap = true, desc = "Close without saving" })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa<CR>', { silent = true, noremap = true, desc = "Close all buffers" })
 
---diagnostic jumping
-vim.keymap.set('n', '<leader>]', '<cmd>[d<CR>', { noremap = true, desc = "Goto next diagnostic" })
-vim.keymap.set('n', '<leader>[', '<cmd>]d<CR>', { noremap = true, desc = "Goto prev diagnostic" })
-
 --splits
 vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = "Split window vertically" })
 vim.keymap.set('n', '<leader>sh', '<C-w>h', { desc = "Split window horizontally" })
 vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = "Symmetric splits" })
 vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = "Close current split" })
+
+--tabs
+vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<CR>', { desc = "New tab" })
+vim.keymap.set('n', '<leader>tb', '<cmd>tabnew %<CR>', { desc = "Open current buffer in new tab" })
+vim.keymap.set('n', '<leader>th', '<cmd>tabp<CR>', { desc = "Previous tab" })
+vim.keymap.set('n', '<leader>tl', '<cmd>tabn<CR>', { desc = "Next tab" })
+vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = "Close tab" })
+
+--diagnostic jumping
+vim.keymap.set('n', '<leader>]', '<cmd>[d<CR>', { noremap = true, desc = "Goto next diagnostic" })
+vim.keymap.set('n', '<leader>[', '<cmd>]d<CR>', { noremap = true, desc = "Goto prev diagnostic" })
