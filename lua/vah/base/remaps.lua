@@ -25,7 +25,3 @@ vim.keymap.set('n', '<leader>tb', '<cmd>tabnew %<CR>', { desc = "Open current bu
 vim.keymap.set('n', '<leader>th', '<cmd>tabp<CR>', { desc = "Previous tab" })
 vim.keymap.set('n', '<leader>tl', '<cmd>tabn<CR>', { desc = "Next tab" })
 vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = "Close tab" })
-
---diagnostic jumping
-vim.keymap.set('n', '<leader>]', '<cmd>[d<CR>', { noremap = true, desc = "Goto next diagnostic" })
-vim.keymap.set('n', '<leader>[', '<cmd>]d<CR>', { noremap = true, desc = "Goto prev diagnostic" })
