@@ -10,22 +10,21 @@ return {
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('UserLspConfig', {}),
             callback = function(ev)
-                local opts = { buffer = ev.buf, silent = true }
                 local telescope = require('telescope.builtin')
 
-                vim.keymap.set('n', '<localleader>fD', vim.lsp.buf.declaration, opts)
-                vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, opts)
-                vim.keymap.set('n', '<localleader>fr', telescope.lsp_references, opts)
-                vim.keymap.set('n', '<localleader>fd', telescope.lsp_definitions, opts)
-                vim.keymap.set('n', '<localleader>fi', telescope.lsp_implementations, opts)
-                vim.keymap.set('n', '<localleader>ft', telescope.lsp_type_definitions, opts)
-                vim.keymap.set('n', '<localleader>rn', vim.lsp.buf.rename, opts)
-                vim.keymap.set('n', '<localleader>D', '<cmd>Telescope diagnostics bufnr=0<CR>', opts)
-                vim.keymap.set('n', '<localleader>cd', vim.diagnostic.open_float, opts)
-                vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-                vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-                vim.keymap.set('n', '<localleader>K', vim.lsp.buf.hover, opts)
-                vim.keymap.set('n', '<localleader>rl', ':LspRestart<CR>', opts)
+                vim.keymap.set('n', '<localleader>fD', vim.lsp.buf.declaration, { desc = "Jump to declaration of symbol under cursor", buffer = ev.buf, silent = true })
+                vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { desc = "Displays code actions at cursor position", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>fr', telescope.lsp_references, { desc = "Displays references to symbol under cursor", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>fd', telescope.lsp_definitions, { desc = "Opens definition of symbol under cursor in new buffer", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>fi', telescope.lsp_implementations, { desc = "Search for implementations of symbol under cursor", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>ft', telescope.lsp_type_definitions, { desc = "Opens type definition of symbol in new buffer", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>rn', vim.lsp.buf.rename, { desc = "Rename symbol under cursor", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>D', '<cmd>Telescope diagnostics bufnr=0<CR>', { desc = "Search diagnostics in current buffer", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>cd', vim.diagnostic.open_float, { desc = "Displays diagnostic information under cursor", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to prev diagnostic", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>K', vim.lsp.buf.hover, { desc = "Displays hover info in floating window of symbol under cursor", buffer = ev.buf, silent = true })
+                vim.keymap.set('n', '<localleader>rl', ':LspRestart<CR>', { desc = "Restart lsp", buffer = ev.buf, silent = true })
             end,
         })
         vim.diagnostic.config({
