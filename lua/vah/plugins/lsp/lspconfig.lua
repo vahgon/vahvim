@@ -21,7 +21,7 @@ return {
                 vim.keymap.set('n', '<localleader>ft', telescope.lsp_type_definitions, opts)
                 vim.keymap.set('n', '<localleader>rn', vim.lsp.buf.rename, opts)
                 vim.keymap.set('n', '<localleader>D', '<cmd>Telescope diagnostics bufnr=0<CR>', opts)
-                vim.keymap.set('n', '<localleader>d', vim.diagnostic.open_float, opts)
+                vim.keymap.set('n', '<localleader>cd', vim.diagnostic.open_float, opts)
                 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
                 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
                 vim.keymap.set('n', '<localleader>K', vim.lsp.buf.hover, opts)
@@ -43,7 +43,7 @@ return {
             severity_sort = true,
             signs = {
                 text = {
-                    [vim.diagnostic.severity.ERROR] = '',
+                    [vim.diagnostic.severity.ERROR] = '',
                     [vim.diagnostic.severity.WARN] = '',
                     [vim.diagnostic.severity.HINT] = '',
                     [vim.diagnostic.severity.INFO] = ''
