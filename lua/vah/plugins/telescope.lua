@@ -8,6 +8,7 @@ return {
      config = function()
         local telescope = require('telescope')
         local actions = require('telescope.actions')
+        local builtin = require('telescope.builtin')
         telescope.setup({
             defaults = {
                 path_display = { 'smart' },
@@ -34,9 +35,10 @@ return {
         })
         telescope.load_extension('fzf')
 
-        vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { desc = "Fuzzy find files" })
-        vim.keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = "Fuzzy find recent files" })
-        vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { desc = "Find string in ./" })
-        vim.keymap.set('n', '<leader>fs', '<cmd>Telescope grep_string<CR>', { desc = "Find string" })
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Fuzzy find files" })
+        vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "Fuzzy find recent files" })
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Find string in ./" })
+        vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = "Find string" })
+        vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true }) end, { desc = "Find buffers" })
     end,
 }

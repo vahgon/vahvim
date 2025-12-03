@@ -19,7 +19,6 @@ return {
                 'lua',
                 'dockerfile',
                 'gitcommit',
-                'make',
                 'cmake',
                 'csv',
                 'http',
