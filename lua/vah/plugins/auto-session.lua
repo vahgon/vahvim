@@ -6,7 +6,7 @@ return {
         { '<leader>sr', '<cmd>AutoSession restore<CR>', desc = 'Restore session' },
         { '<leader>sf', '<cmd>AutoSession search<CR>', desc = 'Search sessions' },
         { '<leader>sa', '<cmd>AutoSession toggle<CR>', desc = 'Toggle autosave' },
-        { '<leader>sd', '<cmd>AutoSession delete', desc = 'Delete session' },
+        { '<leader>sd', '<cmd>AutoSession delete<CR>', desc = 'Delete session' },
     },
 
     opts = {
