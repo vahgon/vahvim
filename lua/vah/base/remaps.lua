@@ -12,3 +12,13 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { noremap = true, desc = "Save fi
 vim.keymap.set('n', '<leader>q', '<cmd>wq<CR>', { silent = true, noremap = true, desc = "Save file and close" })
 vim.keymap.set('n', '<leader>x', '<cmd>q!<CR>', { silent = true, noremap = true, desc = "Close without saving" })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa<CR>', { silent = true, noremap = true, desc = "Close all buffers" })
+
+--diagnostic jumping
+vim.keymap.set('n', '<leader>]', '<cmd>[d<CR>', { noremap = true, desc = "Goto next diagnostic" })
+vim.keymap.set('n', '<leader>[', '<cmd>]d<CR>', { noremap = true, desc = "Goto prev diagnostic" })
+
+--splits
+vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = "Split window vertically" })
+vim.keymap.set('n', '<leader>sh', '<C-w>h', { desc = "Split window horizontally" })
+vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = "Symmetric splits" })
+vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = "Close current split" })
