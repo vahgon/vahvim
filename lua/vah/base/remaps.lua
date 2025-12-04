@@ -18,7 +18,7 @@ vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = "Split window vertically" }
 vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = "Split window horizontally" })
 vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = "Symmetric splits" })
 vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = "Close current split" })
-vim.keymap.set('n', '<leader>sc', ':bo 10split<CR> :term<CR>', { desc = "Spawn terminal split" })
+vim.keymap.set('n', '<leader>sc', ':bo 10split<CR>:term<CR>', { desc = "Spawn terminal split" })
 vim.keymap.set('n', '<C-left>', '<C-w>h', { desc = "Move to lefthand split" })
 vim.keymap.set('n', '<C-down>', '<C-w>j', { desc = "Move to lower split" })
 vim.keymap.set('n', '<C-up>', '<C-w>k', { desc = "Move to upper split" })
