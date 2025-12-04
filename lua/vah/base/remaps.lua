@@ -15,10 +15,14 @@ vim.keymap.set('n', '<leader>Q', '<cmd>qa<CR>', { silent = true, noremap = true,
 
 --splits
 vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = "Split window vertically" })
-vim.keymap.set('n', '<leader>sh', '<C-w>h', { desc = "Split window horizontally" })
+vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = "Split window horizontally" })
 vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = "Symmetric splits" })
 vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = "Close current split" })
-vim.keymap.set('n', '<leader>sc', ':bo :term', { desc = "Spaw small terminal split" })
+vim.keymap.set('n', '<leader>sc', ':bo 10split<CR> :term<CR>', { desc = "Spawn terminal split" })
+vim.keymap.set('n', '<C-left>', '<C-w>h', { desc = "Move to lefthand split" })
+vim.keymap.set('n', '<C-down>', '<C-w>j', { desc = "Move to lower split" })
+vim.keymap.set('n', '<C-up>', '<C-w>k', { desc = "Move to upper split" })
+vim.keymap.set('n', '<C-right>', '<C-w>l', { desc = "Move to righthand plit" })
 
 --tabs
 vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<CR>', { desc = "New tab" })
@@ -26,3 +30,11 @@ vim.keymap.set('n', '<leader>tb', '<cmd>tabnew %<CR>', { desc = "Open current bu
 vim.keymap.set('n', '<leader>th', '<cmd>tabp<CR>', { desc = "Previous tab" })
 vim.keymap.set('n', '<leader>tl', '<cmd>tabn<CR>', { desc = "Next tab" })
 vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = "Close tab" })
+
+--terminal
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Terminal normal mode" })
+
+--buffers
+vim.keymap.set('n', '<leader>n', ':bnext<CR>', { desc = "Go to next buffer" })
+vim.keymap.set('n', '<leader>p', ':bprevious<CR>', { desc = "Go to previous buffer" })
+vim.keymap.set('n', '<leader>d', ':bdelete<CR>', { desc = "Delete current buffer" })
