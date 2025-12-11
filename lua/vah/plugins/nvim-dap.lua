@@ -58,7 +58,7 @@ return {
             dapui.close()
         end
         
-        vim.keymap.set('n', '<localleader>db', dap.toggle_breakpoint, {})
-        vim.keymap.set('n', '<localleader>dc', dap.continue, {})
+        vim.keymap.set('n', '<localleader>db', dap.toggle_breakpoint, { desc = "Set a breakpoint" });
+        vim.keymap.set('n', '<localleader>dc', dap.continue, { desc = "Next step" });
     end,
 }
