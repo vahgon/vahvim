@@ -2,7 +2,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     opts = {
         ensure_installed = {
-            'lua_ls', 'clangd', "vtsls",
+            'lua_ls', 'clangd', "vtsls", "neocmake",
         },
     },
     dependencies = {
