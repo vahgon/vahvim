@@ -1,0 +1,38 @@
+require('nvim-treesitter.configs').setup({
+  ensure_installed = {
+    'c',
+    'cpp',
+    'objc',
+    'python',
+    'javascript',
+    'typescript',
+    'html',
+    'css',
+    'scss',
+    'lua',
+    'dockerfile',
+    'gitcommit',
+    'cmake',
+    'csv',
+    'http',
+    'json',
+    'sql',
+    'markdown',
+    'markdown_inline',
+  },
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
+  indent = { enable = true, },
+  autotag = { enable = true, },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<C-space>',
+      node_incremental = '<C-space>',
+      scope_incremental = false,
+      node_decremental = '<bs>',
+    },
+  },
+})

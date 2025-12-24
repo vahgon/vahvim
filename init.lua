@@ -1,2 +1,2 @@
-require('vah.base')
-require('vah.lazy')
+require('vahvim.base')
+require('vahvim')
