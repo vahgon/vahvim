@@ -9,8 +9,8 @@ end, { silent = true, noremap = true, desc = "Set min lines above cursor to defa
 --text editing
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true, noremap = true, desc = "Move selected text up" })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true, noremap = true, desc = "Move selected text down" })
-vim.keymap.set('n', '<leader>c', '"_c', { silent = true, noremap = true, desc = 'Send changed contents to "black hole" register' })
-vim.keymap.set('n', '<leader>C', '"_C', { silent = true, noremap = true, desc = 'Send changed contents to "black hole" register' })
+vim.keymap.set('n', '<leader>cc', '"_c', { silent = true, noremap = true, desc = 'Send changed contents to "black hole" register' })
+vim.keymap.set('n', '<leader>CC', '"_C', { silent = true, noremap = true, desc = 'Send changed contents to "black hole" register' })
 
 --file actions
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { noremap = true, desc = "Save file" })
@@ -42,4 +42,4 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Terminal normal mode" })
 --buffers
 vim.keymap.set('n', '<leader>n', ':bnext<CR>', { desc = "Go to next buffer" })
 vim.keymap.set('n', '<leader>p', ':bprevious<CR>', { desc = "Go to previous buffer" })
-vim.keymap.set('n', '<leader>d', ':bd!<CR>', { desc = "Delete current buffer" })
+vim.keymap.set('n', '<leader>D', ':bd!<CR>', { desc = "Delete current buffer" })
