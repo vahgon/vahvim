@@ -1,4 +1,4 @@
--- https://github.com/tiagovla/tokyodark.nvim
+-- https://github.com/bluz71/vim-moonfly-colors
 return {
   'bluz71/vim-moonfly-colors',
   name = "moonfly",
