@@ -160,6 +160,15 @@ local lsp = {
 
 
 local dap = {
+  { 'rcarriga/nvim-dap-ui',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      'nvim-neotest/nvim-nio'
+    },
+    config = function()
+      require('vahvim.dap.nvim-dap-ui')
+    end,
+  },
   { 'mfussenegger/nvim-dap',
     dependencies = {
       'rcarriga/nvim-dap-ui'
