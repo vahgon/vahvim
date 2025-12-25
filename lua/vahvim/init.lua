@@ -119,6 +119,13 @@ local plugins = {
     },
     cmd = "Neogit",
     keys = { { "<leader>gg", "<cmd>Neogit<cr>", desc = "show neogit ui" } }
+  },
+  {
+    'folke/lazydev.nvim',
+    ft = "lua",
+    config = function()
+      require("vahvim.plugins.lazydev")
+    end,
   }
 }
 
@@ -143,7 +150,7 @@ local lsp = {
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       { 'antosha417/nvim-lsp-file-operations', config = true },
-      { 'folke/neodev.nvim', opts = {} },
+      { 'folke/neodev.nvim', opts = {}, enabled = false },
     },
     config = function()
       require("vahvim.lsp.lspconfig")
