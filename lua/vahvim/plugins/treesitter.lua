@@ -19,6 +19,7 @@ require('nvim-treesitter.configs').setup({
     'sql',
     'markdown',
     'markdown_inline',
+    'bash',
   },
   auto_install = true,
   highlight = {
