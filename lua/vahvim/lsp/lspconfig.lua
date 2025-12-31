@@ -24,12 +24,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.diagnostic.config({
   virtual_text = {
-    severity = vim.diagnostic.severity.ERROR,
     update_in_insert = false,
     virt_text_hide = true,
     virt_text_pos = 'eol'
   },
-  update_in_insert = true,
+  update_in_insert = false,
   float = {
     focusable = false,
     border = 'rounded',
@@ -39,7 +38,6 @@ vim.diagnostic.config({
   },
   severity_sort = true,
   signs = {
-    severity = vim.diagnostic.severity.ERROR,
     text = {
       [vim.diagnostic.severity.ERROR] = '',
       [vim.diagnostic.severity.WARN] = '',
