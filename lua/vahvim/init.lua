@@ -109,6 +109,7 @@ local plugins = {
       },
     },
   },
+
   {
     'NeogitOrg/neogit',
     lazy = true,
@@ -120,13 +121,15 @@ local plugins = {
     cmd = "Neogit",
     keys = { { "<leader>gg", "<cmd>Neogit<cr>", desc = "show neogit ui" } }
   },
+
   {
     'folke/lazydev.nvim',
     ft = "lua",
     config = function()
       require("vahvim.plugins.lazydev")
     end,
-  }
+  },
+  { 'mg979/vim-visual-multi' },
 }
 
 
