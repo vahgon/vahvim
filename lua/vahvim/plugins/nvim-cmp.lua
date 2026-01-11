@@ -9,7 +9,20 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
+  window = {
+    completion = cmp.config.window.bordered({
+      border = 'rounded',
+    }),
+    documentation = cmp.config.window.bordered({
+      border = 'rounded',
+    })
+  },
   mapping = cmp.mapping.preset.insert({
+    ['<C-h>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c' }),
+    ['<C-x>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
     ['<C-j>'] = cmp.mapping.select_next_item(),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
