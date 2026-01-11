@@ -36,6 +36,15 @@ local plugins = {
     end,
   },
 
+  { 'hrsh7th/cmp-cmdline',
+    dependencies = {
+      'hrsh7th/cmp-buffer'
+    },
+    config = function()
+      require("vahvim.plugins.nvim-cmp-cmd")
+    end,
+  },
+
   { 'tpope/vim-sleuth' },
 
   { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
