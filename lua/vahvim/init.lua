@@ -138,7 +138,15 @@ local plugins = {
       require("vahvim.plugins.lazydev")
     end,
   },
-  { 'mg979/vim-visual-multi' },
+
+  {
+    'nvim-orgmode/orgmode',
+    event = 'VeryLazy',
+    ft = { 'org' },
+    config = function()
+      require("vahvim.plugins.nvim-org")
+    end,
+  }
 }
 
 
