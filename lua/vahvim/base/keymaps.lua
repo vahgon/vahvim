@@ -1,14 +1,13 @@
 --(c)ursor(l)ock to middle of screen
 vim.keymap.set('n', '<leader>cl', function() vim.opt.scrolloff = 999 - vim.o.scrolloff end, { silent = true, noremap = true, desc = "Lock cursor to middle of terminal" })
-vim.keymap.set('n', '<leader>co', function() 
+
+vim.keymap.set('n', '<leader>co', function()
   if (vim.o.scrolloff == 10) or (vim.o.scrolloff == 0) then
-    vim.opt.scrolloff = 10 - vim.o.scrolloff 
+    vim.opt.scrolloff = 10 - vim.o.scrolloff
   end
 end, { silent = true, noremap = true, desc = "Set min lines above cursor to default/0" }) -- 10 - scrolloff because 10 is our default value set in opts.lua
 
 --text editing
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true, noremap = true, desc = "Move selected text up" })
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true, noremap = true, desc = "Move selected text down" })
 vim.keymap.set('n', '<leader>cc', '"_c', { silent = true, noremap = true, desc = 'Send changed contents to "black hole" register' })
 vim.keymap.set('n', '<leader>CC', '"_C', { silent = true, noremap = true, desc = 'Send changed contents to "black hole" register' })
 
