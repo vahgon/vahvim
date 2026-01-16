@@ -149,9 +149,18 @@ local plugins = {
     config = function()
       require("vahvim.plugins.nvim-org")
     end,
-  }
-}
+  },
 
+  {
+    'sphamba/smear-cursor.nvim',
+    opts={
+      cursor_color = '#839bf3',
+    },
+    config = function()
+      require("vahvim.plugins.nvim-cursor")
+    end,
+  },
+}
 
 local lsp = {
   { 'williamboman/mason-lspconfig.nvim',
@@ -180,7 +189,6 @@ local lsp = {
     end,
   }
 }
-
 
 local dap = {
   { 'rcarriga/nvim-dap-ui',
