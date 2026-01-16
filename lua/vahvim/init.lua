@@ -141,8 +141,11 @@ local plugins = {
 
   {
     'nvim-orgmode/orgmode',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-orgmode/telescope-orgmode.nvim',
+    },
     event = 'VeryLazy',
-    ft = { 'org' },
     config = function()
       require("vahvim.plugins.nvim-org")
     end,
