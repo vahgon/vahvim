@@ -35,8 +35,9 @@ cmp.setup({
     { name = 'lazydev' },
     { name = 'nvim_lsp'},
     { name = 'luasnip' },
-    { name = 'buffer' },
-    { name = 'path' },
+    { name = 'orgmode' },
+    { name = 'buffer'  },
+    { name = 'path'    },
   }),
   formatting = {
     format = require('lspkind').cmp_format({
