@@ -222,6 +222,9 @@ local dap = {
       require("vahvim.dap.nvim-dap")
     end,
   },
+  {
+    { 'mfussenegger/nvim-dap-python' },
+  },
 }
 
 -- lazy
