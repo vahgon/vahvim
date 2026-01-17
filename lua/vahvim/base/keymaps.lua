@@ -39,6 +39,6 @@ vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = "Close tab" })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Terminal normal mode" })
 
 --buffers
-vim.keymap.set('n', '<leader>n', ':bnext<CR>', { desc = "Go to next buffer" })
-vim.keymap.set('n', '<leader>p', ':bprevious<CR>', { desc = "Go to previous buffer" })
+vim.keymap.set('n', '<leader>l', ':bnext<CR>', { desc = "Go to next buffer" })
+vim.keymap.set('n', '<leader>h', ':bprevious<CR>', { desc = "Go to previous buffer" })
 vim.keymap.set('n', '<leader>D', ':bd!<CR>', { desc = "Delete current buffer" })
