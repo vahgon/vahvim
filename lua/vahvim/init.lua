@@ -1,5 +1,6 @@
 local plugins = {
   { 'nvim-lua/plenary.nvim' },
+
   { 'nvim-neotest/nvim-nio' },
 
   { 'goolord/alpha-nvim',
@@ -160,6 +161,19 @@ local plugins = {
       require("vahvim.plugins.nvim-cursor")
     end,
   },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  },
 }
 
 local lsp = {
@@ -194,7 +208,7 @@ local dap = {
   { 'rcarriga/nvim-dap-ui',
     dependencies = {
       'mfussenegger/nvim-dap',
-      'nvim-neotest/nvim-nio'
+      'nvim-neotest/nvim-nio',
     },
     config = function()
       require('vahvim.dap.nvim-dap-ui')
@@ -210,6 +224,7 @@ local dap = {
   },
 }
 
+-- lazy
 require("lazy").setup({
   spec = { { import = "vahvim.base.colorscheme" }, plugins, lsp, dap, },
   checker = {
