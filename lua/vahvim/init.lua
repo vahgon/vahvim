@@ -153,6 +153,16 @@ local plugins = {
   },
 
   {
+    'chipsenkbeil/org-roam.nvim',
+    dependencies = {
+      'nvim-orgmode/orgmode',
+    },
+    config = function()
+      require('vahvim.plugins.org-roam')
+    end,
+  },
+
+  {
     'sphamba/smear-cursor.nvim',
     opts={
       cursor_color = '#839bf3',
