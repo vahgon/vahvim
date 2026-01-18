@@ -153,6 +153,13 @@ local plugins = {
   },
 
   {
+    'akinsho/org-bullets.nvim',
+    config = function()
+      require('org-bullets').setup()
+    end
+  },
+
+  {
     'chipsenkbeil/org-roam.nvim',
     dependencies = {
       'nvim-orgmode/orgmode',
