@@ -121,18 +121,6 @@ local plugins = {
   },
 
   {
-    'NeogitOrg/neogit',
-    lazy = true,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim',
-      'ibhagwan/fzf-lua',
-    },
-    cmd = "Neogit",
-    keys = { { "<leader>gg", "<cmd>Neogit<cr>", desc = "show neogit ui" } }
-  },
-
-  {
     'folke/lazydev.nvim',
     ft = "lua",
     config = function()
@@ -179,7 +167,7 @@ local plugins = {
     end,
   },
   {
-    "folke/flash.nvim",
+    'folke/flash.nvim',
     event = "VeryLazy",
     ---@type Flash.Config
     opts = {},
@@ -191,6 +179,8 @@ local plugins = {
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "toggle Flash Search" },
     },
   },
+
+  { 'lewis6991/gitsigns.nvim'}
 }
 
 local lsp = {
