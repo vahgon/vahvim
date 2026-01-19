@@ -1,5 +1,4 @@
 local dap = require('dap')
-local dapui = require('dapui')
 
 vim.keymap.set('n', '<localleader>db', dap.toggle_breakpoint, { desc = "set a breakpoint" })
 vim.keymap.set('n', '<localleader>dn', dap.continue, { desc = "next step" })
