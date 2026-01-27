@@ -10,7 +10,10 @@ end, { silent = true, noremap = true, desc = "Set min lines above cursor to defa
 --text editing
 vim.keymap.set('n', '<leader>cc', '"_c', { silent = true, noremap = true, desc = "send changed contents to \"black hole\" register" })
 vim.keymap.set('n', '<leader>CC', '"_C', { silent = true, noremap = true, desc = "send changed contents to \"black hole\" register" })
-vim.keymap.set('i', '<S-Tab>', '<C-d>', { silent = true, noremap = true, desc = "shift left"})
+
+vim.keymap.set('i', '<S-Tab>', '<C-d>', { silent = true, noremap = true, desc = "shift left" })
+vim.keymap.set('v', '<S-Tab>', '<', { silent = true, noremap = true, desc = "shift left" })
+vim.keymap.set('v', '<Tab>', '>', { silent = true, noremap = true, desc = "shift right"})
 
 --file actions
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { noremap = true, desc = "save file" })
