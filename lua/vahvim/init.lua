@@ -180,7 +180,16 @@ local plugins = {
     },
   },
 
-  { 'lewis6991/gitsigns.nvim'}
+  { 'lewis6991/gitsigns.nvim' },
+
+  {
+    'folke/zen-mode.nvim',
+    opts = {},
+    config = function()
+      vim.keymap.set('n', '<leader>z', ':ZenMode<cr>', { desc = "toggle zenmode" })
+    end,
+  },
+
 }
 
 local lsp = {
