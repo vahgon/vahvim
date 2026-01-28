@@ -186,12 +186,13 @@ local plugins = {
     'folke/zen-mode.nvim',
     opts = {},
     config = function()
-      vim.keymap.set('n', '<leader>z', ':ZenMode<cr>', { desc = "toggle zenmode" })
+      require("vahvim.plugins.zen")
     end,
   },
 
 }
 
+-- lsp integration
 local lsp = {
   { 'williamboman/mason-lspconfig.nvim',
     dependencies = {
@@ -220,6 +221,8 @@ local lsp = {
   }
 }
 
+
+-- dap integration
 local dap = {
   { 'rcarriga/nvim-dap-ui',
     dependencies = {
