@@ -37,15 +37,18 @@ vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { desc = "new tab" })
 vim.keymap.set('n', '<leader>tb', '<cmd>tabnew %<cr>', { desc = "open current buffer in new tab" })
 vim.keymap.set('n', '<leader>th', '<cmd>tabp<cr>', { desc = "previous tab" })
 vim.keymap.set('n', '<leader>tl', '<cmd>tabn<cr>', { desc = "next tab" })
-vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<cr>', { desc = "close tab" })
+vim.keymap.set('n', '<leader>tw', '<cmd>tabclose<cr>', { desc = "close tab" })
 
 --terminal
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "terminal normal mode" })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "terminal normal mode", silent = true })
 
 --buffers
-vim.keymap.set('n', '<leader>l', ':bnext<cr>', { desc = "go to next buffer" })
-vim.keymap.set('n', '<leader>h', ':bprevious<cr>', { desc = "go to previous buffer" })
-vim.keymap.set('n', '<leader>D', ':bd!<cr>', { desc = "delete current buffer" })
+vim.keymap.set('n', '<leader>l', ':bnext<cr>', { desc = "go to next buffer", silent = true })
+vim.keymap.set('n', '<leader>h', ':bprevious<cr>', { desc = "go to previous buffer", silent = true })
+vim.keymap.set('n', '<leader>D', ':bd!<cr>', { desc = "delete current buffer", silent = true })
 
 --sessions
 vim.keymap.set('n', '<leader>ss', ':mksession!<cr>', { desc = "create session file" })
+
+--etc
+vim.keymap.set('n', '<leader>ch', ':noh<cr>', { silent = true, desc = "clear highlights" })
