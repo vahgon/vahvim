@@ -16,6 +16,6 @@ require('zen-mode').setup({
 
 vim.keymap.set('n', '<leader>z', function() require("zen-mode").toggle({
   window = {
-    width = .60
+    width = .70
   }
 }) end, { desc = "toggle zenmode" })
