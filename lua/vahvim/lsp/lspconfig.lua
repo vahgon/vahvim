@@ -19,14 +19,54 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>dN', function() vim.diagnostic.jump({ pos = vim.api.nvim_win_get_cursor(0), count = -1, float = true }) end, { desc = "jump to prev diagnostic in floating window"})
     vim.keymap.set('n', '<leader>da', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, { desc = "toggle diagnostic" })
     vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = "Displays diagnostic information under cursor", buffer = ev.buf, silent = true })
+
+    vim.keymap.set('n', '<leader>dl', function()
+      local new_config = not vim.diagnostic.config().virtual_lines
+      vim.diagnostic.config({ virtual_lines = new_config })
+    end, { desc = 'Toggle diagnostic virtual_lines' })
+
+    vim.keymap.set('n', '<leader>di', function()
+      local groups =  { "DiagnosticUnderlineHint", "DiagnosticUnderlineInfo", }
+      local severity = vim.diagnostic.severity
+
+      if vim.api.nvim_get_hl(0, { name = groups[1] }).undercurl then
+        for i = 1, #groups do
+          vim.cmd.highlight({ groups[i], "gui=NONE" })
+        end
+      else
+        for i = 1, #groups do
+          vim.cmd.highlight({ groups[i], "gui=undercurl" })
+        end
+      end
+    end, { desc = "Toggle informational/hinting diagnostics" })
+
+    vim.keymap.set('n', '<leader>dwu', function()
+      if vim.api.nvim_get_hl(0, { name = "DiagnosticUnderlineWarn", }).undercurl then
+        vim.cmd.highlight({ "DiagnosticUnderlineWarn", "gui=NONE"})
+      else
+        vim.cmd.highlight({ "DiagnosticUnderlineWarn", "gui=undercurl" })
+      end
+    end, { desc = "Toggle warning diagnostic underline"})
+
+    vim.keymap.set('n', '<leader>dwl', function()
+      local curr = vim.diagnostic.config().virtual_text.severity.min
+      if curr == 1 then
+        vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.WARN, max = vim.diagnostic.severity.ERROR } } } )
+      else
+        vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR, max = vim.diagnostic.severity.ERROR } } } )
+      end
+    end, { desc = "toggle warning vtext" })
   end,
 })
 
+local less = vim.diagnostic.config({})
+
 vim.diagnostic.config({
   virtual_text = {
+    severity = { min = vim.diagnostic.severity.ERROR, max = vim.diagnostic.severity.ERROR },
     update_in_insert = false,
     virt_text_hide = true,
-    virt_text_pos = 'eol'
+    virt_text_pos = 'eol',
   },
   update_in_insert = false,
   float = {
