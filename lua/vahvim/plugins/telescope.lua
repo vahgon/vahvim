@@ -26,9 +26,11 @@ telescope.setup({
   },
 })
 telescope.load_extension('fzf')
+telescope.load_extension('undo')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Fuzzy find files" })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "Fuzzy find recent files" })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Find string in ./" })
 vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = "Find string" })
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true }) end, { desc = "Find buffers" })
+vim.keymap.set('n', '<leader>fu', "<cmd>Telescope undo<cr>", { desc = "Open the undo tree" })
