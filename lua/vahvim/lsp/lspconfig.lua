@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.diagnostic.config({ virtual_lines = new_config })
     end, { desc = 'Toggle diagnostic virtual_lines' })
 
-    vim.keymap.set('n', '<leader>di', function()
+    vim.keymap.set('n', '<leader>diu', function()
       local groups =  { "DiagnosticUnderlineHint", "DiagnosticUnderlineInfo", }
       local severity = vim.diagnostic.severity
 
