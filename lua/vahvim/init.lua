@@ -244,14 +244,23 @@ local dap = {
       require("vahvim.dap.nvim-dap")
     end,
   },
+
+  { 'mfussenegger/nvim-dap-python' },
+}
+
+-- linters
+local linters = {
   {
-    { 'mfussenegger/nvim-dap-python' },
+    'mfussenegger/nvim-lint',
+    config = function()
+      require("vahvim.lsp.lint")
+    end,
   },
 }
 
 -- lazy
 require("lazy").setup({
-  spec = { { import = "vahvim.base.colorscheme" }, plugins, lsp, dap, },
+  spec = { { import = "vahvim.base.colorscheme" }, plugins, lsp, dap, linters },
   checker = {
       enabled = true,
       notify = false,
