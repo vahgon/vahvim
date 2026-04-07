@@ -70,7 +70,6 @@ local plugins = {
   },
 
   { 'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
     lazy = false,
     build = ':TSUpdate',
     config = function()
@@ -160,15 +159,15 @@ local plugins = {
     end,
   },
 
-  {
-    'sphamba/smear-cursor.nvim',
-    opts={
-      cursor_color = '#839bf3',
-    },
-    config = function()
-      require("vahvim.plugins.nvim-cursor")
-    end,
-  },
+  -- {
+  --   'sphamba/smear-cursor.nvim',
+  --   opts={
+  --     cursor_color = '#839bf3',
+  --   },
+  --   config = function()
+  --     require("vahvim.plugins.nvim-cursor")
+  --   end,
+  -- },
   {
     'folke/flash.nvim',
     event = "VeryLazy",
@@ -184,6 +183,14 @@ local plugins = {
   },
 
   { 'lewis6991/gitsigns.nvim' },
+
+  {
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = "zathura"
+    end
+  },
 
   {
     'folke/zen-mode.nvim',
