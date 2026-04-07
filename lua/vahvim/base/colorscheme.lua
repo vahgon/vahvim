@@ -17,7 +17,7 @@ return {
       khaki = "#00ff33",
       lime = "#85dc85",
       green = "#8cc85f",
-      emerald = "#839bf3",
+      emerald = "#8C84F0",
       turquoise = "#79dac8",
       sky = "#b3f1ff",
       blue = "#80a0ff",
@@ -25,7 +25,8 @@ return {
       violet = "#cf87e8",
       purple = "#ae81ff",
     })
-    vim.cmd [[colorscheme moonfly]]
-    vim.g.moonflyVirtualTextColor = true
+vim.cmd [[colorscheme moonfly]]
+vim.g.moonflyVirtualTextColor = true
   end,
 }
+
