@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<localleader>fi', telescope.lsp_implementations, { desc = "Search for implementations of symbol under cursor", buffer = ev.buf, silent = true })
     vim.keymap.set('n', '<localleader>ft', telescope.lsp_type_definitions, { desc = "Opens type definition of symbol in new buffer", buffer = ev.buf, silent = true })
     vim.keymap.set('n', '<localleader>fD', '<cmd>Telescope diagnostics bufnr=0<CR>', { desc = "Search diagnostics in current buffer", buffer = ev.buf, silent = true })
-    vim.keymap.set('n', '<localleader>rl', ':LspRestart<CR>', { desc = "Restart lsp", buffer = ev.buf, silent = true })
+    vim.keymap.set('n', '<localleader>rl', '<cmd>w | e<cr>', { desc = "Restart lsp", buffer = ev.buf, silent = true })
 
     vim.keymap.set('n', '<localleader>fD', vim.lsp.buf.declaration, { desc = "Jump to declaration of symbol under cursor", buffer = ev.buf, silent = true })
     vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { desc = "Displays code actions at cursor position", buffer = ev.buf, silent = true })
