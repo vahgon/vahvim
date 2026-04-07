@@ -1,8 +1,8 @@
 require('nvim-treesitter').setup({
-install_dir = vim.fn.stdpath('data') .. '/site'
+  install_dir = vim.fn.stdpath('data') .. '/site',
 })
 
-require('nvim-treesitter').install { 
+require('nvim-treesitter').install({
   'c',
   'cpp',
   'objc',
@@ -23,4 +23,9 @@ require('nvim-treesitter').install {
   'markdown',
   'markdown_inline',
   'bash',
-}
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function() pcall(vim.treesitter.start) end,
+})
