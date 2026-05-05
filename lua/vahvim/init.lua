@@ -159,15 +159,6 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   'sphamba/smear-cursor.nvim',
-  --   opts={
-  --     cursor_color = '#839bf3',
-  --   },
-  --   config = function()
-  --     require("vahvim.plugins.nvim-cursor")
-  --   end,
-  -- },
   {
     'folke/flash.nvim',
     event = "VeryLazy",
