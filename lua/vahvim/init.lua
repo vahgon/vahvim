@@ -176,14 +176,6 @@ local plugins = {
   { 'lewis6991/gitsigns.nvim' },
 
   {
-    "lervag/vimtex",
-    lazy = false,
-    init = function()
-      vim.g.vimtex_view_method = "zathura"
-    end
-  },
-
-  {
     'folke/zen-mode.nvim',
     opts = {},
     config = function()
