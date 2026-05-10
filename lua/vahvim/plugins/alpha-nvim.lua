@@ -33,4 +33,4 @@ dashboard.config.layout = {
 alpha.setup(dashboard.config)
 vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
-vim.keymap.set('n', '<leader>ad', ':Alpha<cr>', { desc = 'open Alpha dashboard buffer in current buffer'})
+vim.keymap.set('n', '<leader>b', ':Alpha<cr>', { desc = 'open Alpha dashboard buffer in current buffer'})
