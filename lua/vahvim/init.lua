@@ -183,6 +183,14 @@ local plugins = {
     end,
   },
 
+  {
+    'leath-dub/snipe.nvim',
+    keys = {
+      { "gb", function() require('snipe').open_buffer_menu() end, desc = "open snipe buffer menu" }
+    },
+    opts = {}
+  },
+
 }
 
 -- lsp integration
