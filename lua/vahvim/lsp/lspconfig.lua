@@ -1,3 +1,4 @@
+local signsenable = false;
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
@@ -56,10 +57,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR, max = vim.diagnostic.severity.ERROR } } } )
       end
     end, { desc = "toggle warning vtext" })
+
+    vim.keymap.set('n', '<leader>ds', function()
+      signsenable = not signsenable
+      if signsenable then
+        vim.diagnostic.config({signs = false})
+      else
+        vim.diagnostic.config({
+          signs ={ text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.HINT] = '',
+            [vim.diagnostic.severity.INFO] = ''
+          }}
+        })
+      end
+    end, { desc = "disable/enable lsp signs" })
   end,
+
 })
 
-local less = vim.diagnostic.config({})
 
 vim.diagnostic.config({
   virtual_text = {
@@ -122,4 +139,4 @@ diagnostics(0, "DiagnosticSignHint", { fg = "#00F7EF" })
 diagnostics(0, "DiagnosticUnderlineError", { undercurl = true, sp = "#FF2800" })
 diagnostics(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "#EED202" })
 diagnostics(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "#FFFFFF" })
-diagnostics(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "#00F7EF"})
+diagnostics(1, "DiagnosticUnderlineHint", { undercurl = true, sp = "#00F7EF"})
