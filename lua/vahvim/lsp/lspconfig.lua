@@ -21,6 +21,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>da', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, { desc = "toggle diagnostic" })
     vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = "Displays diagnostic information under cursor", buffer = ev.buf, silent = true })
 
+    vim.keymap.set('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>', { desc = "turn off/on gitsigns" })
+
     vim.keymap.set('n', '<leader>dl', function()
       local new_config = not vim.diagnostic.config().virtual_lines
       vim.diagnostic.config({ virtual_lines = new_config })
