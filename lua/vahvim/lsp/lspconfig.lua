@@ -30,7 +30,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.keymap.set('n', '<leader>diu', function()
       local groups =  { "DiagnosticUnderlineHint", "DiagnosticUnderlineInfo", }
-      local severity = vim.diagnostic.severity
 
       if vim.api.nvim_get_hl(0, { name = groups[1] }).undercurl then
         for i = 1, #groups do
@@ -76,9 +75,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       end
     end, { desc = "disable/enable lsp signs" })
   end,
-
 })
-
 
 vim.diagnostic.config({
   virtual_text = {
