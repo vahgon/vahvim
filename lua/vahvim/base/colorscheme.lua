@@ -7,7 +7,7 @@ return {
   config = function()
     require('moonfly').custom_colors({
       red = "#ff5d5d",
-      crimson = "#ff5189",
+      crimson = "#ff5190",
       cranberry = "#e65e72",
       coral = "#f09479",
       cinnamon = "#e9958e",

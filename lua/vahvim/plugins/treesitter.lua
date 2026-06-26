@@ -20,8 +20,6 @@ require('nvim-treesitter').install({
   'http',
   'json',
   'sql',
-  'markdown',
-  'markdown_inline',
   'bash',
 })
 
