@@ -3,6 +3,8 @@ local plugins = {
 
   { 'nvim-neotest/nvim-nio' },
 
+  { 'tpope/vim-obsession' },
+
   { 'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
