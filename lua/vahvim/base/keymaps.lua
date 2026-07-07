@@ -2,8 +2,8 @@
 vim.keymap.set('n', '<leader>cl', function() vim.opt.scrolloff = 999 - vim.o.scrolloff end, { silent = true, noremap = true, desc = "Lock cursor to middle of terminal" })
 
 vim.keymap.set('n', '<leader>co', function()
-  if (vim.o.scrolloff == 10) or (vim.o.scrolloff == 0) then
-    vim.opt.scrolloff = 10 - vim.o.scrolloff
+  if (vim.o.scrolloff == 5) or (vim.o.scrolloff == 0) then
+    vim.opt.scrolloff = 5 - vim.o.scrolloff
   end
 end, { silent = true, noremap = true, desc = "Set min lines above cursor to default" }) -- 10 - scrolloff because 10 is our default value set in opts.lua
 
