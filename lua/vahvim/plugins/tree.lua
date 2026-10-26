@@ -41,7 +41,7 @@ nvimtree.setup({
     },
   },
   filters = {
-    custom = { "\\.vim", },
+    custom = { "\\.vim", ".git", ".cache", ".idea", },
   },
   on_attach = my_on_attach
 })
